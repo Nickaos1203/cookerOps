@@ -6,7 +6,7 @@
   <h2 class="font-title-comment"><b>Nouveau commentaire</b></h2>
   <br>
     <%= simple_form_for [@plat, @comment] do |f| %>
-      <%= f.input :avis %>
+      <%= f.input :avis, :as => :text %>
       <%= f.input :note %>
       <%= f.input :picture %>
       <%= f.submit "Validation", class: "btn btn-primary" %>

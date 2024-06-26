@@ -31,6 +31,13 @@
         <div>A propos du plat: <b><%= @plat.nom %></b></div>
         <div>Avis: <%= comment.avis %></div>
         <div>Note: <%= comment.note.to_i %>/20</div>
+        <div><%= link_to "Delete",
+            comment_path(comment),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+        %></div>
+
+
+
     </div>
   <% end %>
 </div>

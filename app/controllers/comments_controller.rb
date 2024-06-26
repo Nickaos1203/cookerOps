@@ -10,9 +10,20 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.plat = @plat
-    @comment.save
-    redirect_to plat_path(@plat)
+    if @comment.save
+      redirect_to plat_path(@plat)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to plat_path(@comment.plat), status: :see_other
+  end
+
+
 
   private
 
