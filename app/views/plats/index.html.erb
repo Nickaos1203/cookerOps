@@ -1,0 +1,27 @@
+<div class="position-button">
+  <a href="<%= root_path %>" class="button-return"><i class="fa-regular fa-circle-left"></i> <b>Retour</b></a>
+</div>
+
+
+
+<div class="container list-menu">
+  <div class="title-position">
+    <h1 class="font-title"><b>Le menu</b></h1>
+  </div>
+
+  <div class="row padding-bottom">
+  <% @plats.each do |plat| %>
+    <div class="d-flex justify-content-between col-sm-6 col-md-4 col-lg-3 mb-4">
+
+      <div class="card" style="width: 18rem;">
+        <img src="<%= plat.image %>" class="card-img-top plat-<%= plat.id %>", alt="plat-<%= plat.id %>">
+        <div class="card-body">
+          <h5 class="card-title"><%= plat.nom %></h5>
+          <p class="card-text"><%= plat.prix %>€</p>
+        <a href="<%= plat_path(plat) %>" class="btn btn-warning"><b>En savoir plus</b></a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>

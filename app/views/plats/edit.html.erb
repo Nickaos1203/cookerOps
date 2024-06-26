@@ -1,0 +1,15 @@
+<%= form_with model: @plat do |f| %>
+  <%= f.label :nom %>
+  <%= f.text_field :nom %>
+  <%= f.label :categorie %>
+  <%= f.text_field :categorie %>
+    <%= f.label :ingredients %>
+  <%= f.text_field :ingredients %>
+    <%= f.label :description %>
+  <%= f.text_field :description %>
+    <%= f.label :image %>
+  <%= f.text_field :image %>
+  <%= f.label :prix %>
+  <%= f.number_field :prix %>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,14 @@
+<div class="position-button">
+  <a href="<%= plat_path(@plat) %>" class="button-return"><i class="fa-regular fa-circle-left"></i> <b>Retour</b></a>
+</div>
+
+  <div class="align-center">
+  <h2 class="font-title-comment"><b>Nouveau commentaire</b></h2>
+  <br>
+    <%= simple_form_for [@plat, @comment] do |f| %>
+      <%= f.input :avis %>
+      <%= f.input :note %>
+      <%= f.input :picture %>
+      <%= f.submit "Validation", class: "btn btn-primary" %>
+    <% end %>
+  </div>

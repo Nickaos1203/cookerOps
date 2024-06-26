@@ -1,0 +1,38 @@
+<div class="position-button">
+  <a href="<%= plats_path %>" class="button-return"><i class="fa-regular fa-circle-left"></i> <b>Retour</b></a>
+</div>
+
+<div class= "container list-menu">
+  <br>
+  <h1 class="font-title text-center pb-2"><b>Le plat</b></h1>
+  <div class="container bg-white p-4 rounded">
+    <div class= "row justify-content-center">
+      <div class= "col-12 col-md-6 text-center">
+          <h2 class="text-uppercase"><b><%= @plat.nom %></b></h2>
+          <p><b>CATEGORIE :</b> <%= @plat.categorie %></p>
+          <p><b>INGREDIENTS :</b> <%= @plat.ingredients %></p>
+          <p><b>DESCRIPTION :</b> <%= @plat.description %></p>
+          <p><b>PRIX :</b> <%= @plat.prix %> €</p>
+        </div>
+
+        <div class= "col-12 col-md-6">
+          <img src="<%= @plat.image %>" class="illustration">
+        </div>
+    </div>
+  </div>
+
+  <h2 class="font-title text-center pt-4"><strong>Commentaires</strong></h2>
+  <div class="position-center">
+    <a href="<%= new_plat_comment_path(@plat) %>" class="button-comment">Ajouter un commentaire</a>
+  </div>
+<div class="container list-group">
+    <% @plat.comments.each do |comment| %>
+    <div class="box-commentaire">
+        <div>A propos du plat: <b><%= @plat.nom %></b></div>
+        <div>Avis: <%= comment.avis %></div>
+        <div>Note: <%= comment.note.to_i %>/20</div>
+    </div>
+  <% end %>
+</div>
+
+</div>
